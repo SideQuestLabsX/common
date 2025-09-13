@@ -17,7 +17,7 @@ FetchContent_Declare(common_resources
 FetchContent_MakeAvailable(common_resources)
 
 list(APPEND CMAKE_MODULE_PATH "${common_resources_SOURCE_DIR}/cmake")
-include(<ModuleName>)
+include(<ModuleName>) # without .cmake
 ```
 
 ## Option 2: Files already in your source tree
@@ -26,7 +26,7 @@ If the `.cmake` files are present in your source tree, you can skip `FetchConten
 
 ```cmake
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake") # Use the actual path to your .cmake files
-include(<ModuleName>)
+include(<ModuleName>) # without .cmake
 ```
 
 ## Enabling a module after inclusion
